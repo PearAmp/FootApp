@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
-import HeaderTabs from "../components/HeaderTabs";
-import SearchBar from "../components/SearchBar";
-import Categories from "../components/Categories";
+import HeaderTabs from "../components/home/HeaderTabs";
+import SearchBar from "../components/home/SearchBar";
+import Categories from "../components/home/Categories";
 import RestaurantItems, {
   localRestaurants,
-} from "../components/RestaurantItems";
-import BottomTabs from "../components/BottomTabs";
+} from "../components/home/RestaurantItems";
+import BottomTabs from "../components/home/BottomTabs";
 
 
 export default function Home() {
