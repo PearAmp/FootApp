@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, Image } from 'react-native';
 import React from 'react';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const foods = [
     {
@@ -53,7 +54,7 @@ const FoodInfo = (props) => (
 
 const FoodImage = (props) => (
   <View>
-    <Image source={{uri: props.food.image}} />
+    <Image source={{uri: props.food.image}} style={styles.foodimg}/>
   </View>
 
 );
@@ -64,11 +65,16 @@ const FoodImage = (props) => (
 
 export default function MenuItems() {
   return (
-    <View>
+    <ScrollView>
+    {foods.map((food ,index) => (
+    <View key={index}>
       <View style={styles.MenuItemStyle} >
-      <FoodInfo food={foods[0]} />
+      <FoodInfo food={food} />
+      <FoodImage food={food} />
     </View>
     </View>
+     ))}
+     </ScrollView>
   );
 }
 
@@ -88,6 +94,12 @@ const styles = StyleSheet.create ({
     titleStlye: {
       fontSize: 19,
       fontWeight: '600',
+    },
+    foodimg: {
+      width: 100,
+      height: 100,
+      borderRadius: 8,
+
     },
 
 });
